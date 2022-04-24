@@ -1,4 +1,4 @@
-from fastapi import FastAPI, status
+from fastapi import FastAPI, status, HTTPException
 
 import logging
 from logging.config import dictConfig
@@ -25,5 +25,8 @@ def perform_healthcheck():
 def predict(request: PredictionRequest):
   # YOUR CODE GOES HERE
   sentiment_query_sentence = request.query_string
+  if not sentiment_query_sentence:
+        raise HTTPException(status_code=500, detail="Text required.") 
+
   sentiment = sentiment_model(sentiment_query_sentence)
   return {'sentiment': sentiment}
