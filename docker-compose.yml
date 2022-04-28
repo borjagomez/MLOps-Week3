@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  redditbot:
+    image: borjagomez/redditbot 
+    ports:
+      - "8000:8000"
+    command: "./start.sh"      
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8000/healthcheck"]
+      interval: 5m
+      timeout: 10s
+      retries: 3
+      start_period: 5s    
