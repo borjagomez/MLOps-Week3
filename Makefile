@@ -19,4 +19,4 @@ push:
 	docker push public.ecr.aws/d4e8a7g0/borja-reddit-broker-bot:latest
 
 auth:
-	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681261969843.dkr.ecr.us-east-1.amazonaws.com
+	aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/d4e8a7g0
