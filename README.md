@@ -6,7 +6,7 @@ This is is the containerized version of the Huggingface + FastAPI for the Reddit
 
 You can also push the container in an AWS Public ECR for future deployment in an EC2 or in Kubernetes.
 
-## How to us it
+## How to use it
 
 All the commends are implemented using Makefile. Here you have the list of available commands:
 
